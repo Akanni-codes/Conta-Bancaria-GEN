@@ -73,9 +73,11 @@ export class Conta {
     let tipo: string = "";
     switch (this._tipo) {
       case 1:
+        tipo='Conta Corrente'
         break;
 
       case 2:
+        tipo = 'Conta Poupança'
         break;
     }
     console.log("\n\n*****************************************************");
