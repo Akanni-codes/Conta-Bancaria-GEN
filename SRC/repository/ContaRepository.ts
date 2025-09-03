@@ -1,4 +1,4 @@
-import { Conta } from "../model/conta";
+import { Conta } from "../model/Conta";
 
 export interface ContaRepository {
   // CRUD da conta
