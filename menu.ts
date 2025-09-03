@@ -20,33 +20,33 @@ export function main() {
   // conta.depositar(5000);
   // conta.visualizar();
 
-  const contaCorrente: ContaCorrente = new ContaCorrente(
-    2,
-    123,
-    1,
-    "Maura",
-    15000,
-    1000
-  );
-  contaCorrente.visualizar();
-  contaCorrente.sacar(2000);
-  contaCorrente.visualizar();
-  contaCorrente.depositar(1000);
-  contaCorrente.visualizar();
+  // const contaCorrente: ContaCorrente = new ContaCorrente(
+  //   2,
+  //   123,
+  //   1,
+  //   "Maura",
+  //   15000,
+  //   1000
+  // );
+  // contaCorrente.visualizar();
+  // contaCorrente.sacar(2000);
+  // contaCorrente.visualizar();
+  // contaCorrente.depositar(1000);
+  // contaCorrente.visualizar();
 
-  const contaPoupanca: ContaPoupanca = new ContaPoupanca(
-    3,
-    123,
-    2,
-    "Filipe",
-    1000,
-    10
-  );
-  contaPoupanca.visualizar();
-  contaPoupanca.sacar(200);
-  contaPoupanca.visualizar();
-  contaPoupanca.depositar(1000);
-  contaPoupanca.visualizar();
+  // const contaPoupanca: ContaPoupanca = new ContaPoupanca(
+  //   3,
+  //   123,
+  //   2,
+  //   "Filipe",
+  //   1000,
+  //   10
+  // );
+  // contaPoupanca.visualizar();
+  // contaPoupanca.sacar(200);
+  // contaPoupanca.visualizar();
+  // contaPoupanca.depositar(1000);
+  // contaPoupanca.visualizar();
 
   while (true) {
     console.log(
