@@ -8,7 +8,7 @@ import { ContaController } from "./src/controller/ContaController";
 export function main() {
   let contas: ContaController = new ContaController();
 
-  let opcao, numero, agencia, tipo, saldo, limite, aniversario:number;
+  let opcao, numero, agencia, tipo, saldo, limite, aniversario: number;
   let titular: string;
   const tipoContas = ["Conta Corrente", "Conta Poupanca"];
 
@@ -154,6 +154,9 @@ export function main() {
           "\n\nConsultar dados da Conta - por número\n\n",
           colors.reset
         );
+        console.log("Digite o número da Conta: ");
+        numero = readlinesync.questionInt("");
+        contas.procurarporNumero(numero);
 
         continuar();
         break;
@@ -163,7 +166,54 @@ export function main() {
           "\n\nAtualizar dados da Conta\n\n",
           colors.reset
         );
+        console.log("Digite  número da Conta: ");
+        numero = readlinesync.questionInt("");
 
+        let conta = contas.buscarNoArray(numero);
+
+        if (conta != null) {
+          console.log("Digite o Número da agência: ");
+          agencia = readlinesync.questionInt("");
+
+          console.log("Digite o Nome do Titular da conta: ");
+          titular = readlinesync.question("");
+
+          tipo = conta.tipo;
+
+          console.log("\nDigite o saldo da conta(R$): ");
+          saldo = readlinesync.questionFloat("");
+
+          switch (tipo) {
+            case 1:
+              console.log("Digite o limite da Conta (R$): ");
+              limite = readlinesync.questionFloat("");
+              contas.atualizar(
+                new ContaCorrente(numero, agencia, tipo, titular, saldo, limite)
+              );
+              break;
+
+            case 2:
+              console.log("Digite o Dia di aniversário da Conta Poupança: ");
+              aniversario = readlinesync.questionInt("");
+              contas.atualizar(
+                new ContaCorrente(
+                  numero,
+                  agencia,
+                  tipo,
+                  titular,
+                  saldo,
+                  aniversario
+                )
+              );
+              break;
+          }
+        } else {
+          console.log(
+            colors.fg.red,
+            "\nA Conta numero: " + numero + "não foi encontrada!",
+            colors.reset
+          );
+        }
         continuar();
         break;
       case 5:
