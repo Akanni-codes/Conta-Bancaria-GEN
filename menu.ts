@@ -223,6 +223,10 @@ export function main() {
           colors.reset
         );
 
+        console.log("Digite o número da Conta: ");
+        numero = readlinesync.questionInt("");
+        contas.deletar(numero);
+
         continuar();
         break;
       case 6:
