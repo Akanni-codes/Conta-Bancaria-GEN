@@ -72,11 +72,35 @@ export class ContaController implements ContaRepository {
       );
     }
   }
-  sacar(number: number, valor: number): void {
-    throw new Error("Method not implemented.");
+  sacar(numero: number, valor: number): void {
+    let conta = this.buscarNoArray(numero)
+
+    if (conta != null) {
+      if (conta.sacar(valor)== true) {
+        console.log(colors.fg.green, "\nO Saque na Conta numero: " + numero + " foi efetuado com sucesso!",colors.reset)
+      }
+    } else {
+      console.log(
+        colors.fg.red,
+        "\nA Conta numero: " + numero + " não foi encontrada",
+        colors.reset
+      );
+    }
   }
   depositar(numero: number, valor: number): void {
-    throw new Error("Method not implemented.");
+    let conta = this.buscarNoArray(numero)
+
+    if (conta != null) {
+      conta.depositar(valor)
+      console.log(colors.fg.green, "\nO Deposito na Conta numero: " + numero + " foi efetuado com sucesso!",colors.reset)
+      
+    } else {
+      console.log(
+        colors.fg.red,
+        "\nA Conta numero: " + numero + " não foi encontrada",
+        colors.reset
+      );
+    }
   }
   transferir(
     numeroOrigigem: number,
