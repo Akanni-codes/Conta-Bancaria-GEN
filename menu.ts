@@ -16,7 +16,7 @@ export function main() {
     limite,
     aniversario,
     valor,
-    numeroDestinto: number;
+    numeroDestino: number;
   let titular: string;
   const tipoContas = ["Conta Corrente", "Conta Poupanca"];
 
@@ -269,7 +269,16 @@ export function main() {
           "\n\nTransferência entre Contas\n\n",
           colors.reset
         );
+        console.log("Digite o número da Conta de Origem: ");
+        numero = readlinesync.questionInt("");
 
+        console.log("Digite o numero da Conta de Destino: ");
+        numeroDestino = readlinesync.questionInt("");
+
+        console.log("Digite o Valor do Depósito (R$): ");
+        valor = readlinesync.questionFloat("");
+
+        contas.transferir(numero, numeroDestino, valor);
         continuar();
         break;
       default:
